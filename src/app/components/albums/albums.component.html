@@ -1,0 +1,19 @@
+<app-page-header [pageTitle]="pageTitle" [headerIcon]="headerIcon"></app-page-header>
+  
+<div *ngIf="albums.length > 0; else noAlbums" class="row">
+  <div *ngFor="let album of albums" class="col-12 mb-3">
+    <div class="card">
+      <div class="card-header">
+        {{ album.title }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #NoAlbums>
+  <div class="row">
+    <div class="col-12">
+      <p><i>No Albums avilable noW!</i></p>
+    </div>
+  </div>
+</ng-template>
